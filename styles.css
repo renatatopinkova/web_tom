@@ -1,0 +1,99 @@
+html, body {
+  font-family: 'Garamond', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.holder {
+  display: flex;
+  height: 300px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-items: flex-end;
+  background-image: url('banner.png');
+  background-position: right top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.name {
+  position: absolute;
+  text-align: center;
+  top: 20%;
+  left: 15%;
+}
+
+.name h1, h2 {
+  background-color: white;
+  font-family: Garamond;
+}
+
+.name h2 {
+  font-style: italic;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding-bottom: 1px;
+  background-color: ghostwhite;
+  flex-wrap: wrap;
+}
+
+nav {
+  justify-content: space-around;
+  width: 100%;
+  background-color: ghostwhite;
+}
+
+nav p {
+  display: inline-flex;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  background-color: ghostwhite;
+}
+
+a:hover {
+  color: cadetblue;
+}
+
+
+.content {
+  position: relative;
+  padding-top: 300px;
+  width: 85%;
+  margin: auto;
+  min-height: 90%;
+}
+
+@media only screen and (max-width: 970px) {
+.logo span {
+  display: none;
+  }
+}
+
+
+.logo {
+  display: block;
+}
+
+
+footer {
+  width: 100%;
+  height: 25px;
+  background-color: ghostwhite;
+}
+
+footer p {
+  padding-top: 3px;
+  font-size: 0.9rem;
+  text-align: end;
+  padding-right: 25px;
+  font-family: 'Caveat', Garamond;
+}
