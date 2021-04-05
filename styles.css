@@ -3,7 +3,13 @@ html, body {
   font-size: 16px;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  min-height: 100vh;
+}
+
 
 /*Header section*/
 
@@ -15,7 +21,7 @@ html, body {
   top: 0;
   left: 0;
   align-items: flex-end;
-  background-image: url('banner.png');
+  background-image: url('img/banner2.svg');
   background-position: right top;
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,7 +31,7 @@ html, body {
 .name {
   position: absolute;
   text-align: center;
-  top: 20%;
+  top: 22%;
   left: 15%;
 }
 
@@ -46,31 +52,34 @@ html, body {
  font-family: 'Garamond';
 }
 
-.navbar {
+
+nav {
   display: flex;
   width: 100%;
   top: 0;
   left: 0;
   padding-bottom: 1px;
   background-color: rgba(255,255,255, 0.75);
+  border-bottom: rgb(197, 203, 209) 1px solid;
+  justify-content: space-around;
+}
+
+.navlinks {
+  display: flex;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  width: 100%;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
-nav {
-  justify-content: space-around;
-  width: 100%;
-  border-bottom: rgb(197, 203, 209) 1px solid;
-}
-
-nav p {
-  display: inline-flex;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-}
-
-nav a {
+.navlinks a {
   text-decoration: none;
   color:black;
+}
+
+.navlinks li {
+    list-style: none;
 }
 
 nav a:visited {
@@ -78,11 +87,22 @@ nav a:visited {
 }
 
 nav a:hover {
-  color: rgb(197, 203, 209);
+  color: rgb(0, 132, 255); /*rgb(197, 203, 209);*/
 }
 
 
+/* Hamburger menu setup */
 
+.burger div {
+  width: 30px;
+  height: 4px;
+  background-color: black;
+  margin: 7px;
+}
+
+.burger {
+  display: none;
+}
 
 /* Content section */
 
@@ -91,7 +111,6 @@ nav a:hover {
   padding-top: 300px;
   padding-left: 7.5%;
   padding-right: 7.5%;
-  min-height: 60%;
   font-size: 18px;
   background-color: rgba(255, 255, 255, 0.856);
   line-height: 1.5em;
@@ -104,7 +123,7 @@ nav a:hover {
 #photo img {
   width: 110%;
   height: auto;
-  padding-top: 10%;
+  padding-top: 15%;
 } 
 
 #about {
@@ -112,14 +131,22 @@ nav a:hover {
   padding-left: 5%;
 }
 
-.specialty {
+.specialty, .references, .course, .contact {
   margin: 5% 0;
-
 }
 
-.links {
-  margin: 2% 0;
+.contact {
+  text-align: center
 }
+
+.contact p {
+  padding: 2% 0;
+  font-size: 22px;
+}
+
+
+
+/* General links specification */
 
 
 .links a {
@@ -138,23 +165,85 @@ nav a:hover {
   padding: 1% 0;
 }
 
+
+/* Icons */
+
 #RG {
   width: 32px;
   height: auto;
 }
 
+
+
 /*Footer*/
 
 footer {
+  position: relative;
   width: 100%;
-  height: 4%;
-  border-top: rgb(197, 203, 209) 1px solid;
+  bottom:0;
 }
 
 footer p {
   font-size: 0.9rem;
   text-align: end;
   padding-right: 25px;
-  font-family: Garamond;
-  padding-bottom: 10px;
+
+}
+
+
+/* Small screens */
+
+@media only screen and (max-width: 768px), (max-height: 600px)) {
+  body {
+      overflow-x: hidden;
+  }
+  
+  .holder {
+    height: 100px;
+  }
+
+  .content {
+    padding-top: 100px;
+  }
+
+  .name h2{
+      display: none;
+    }
+
+  .name {
+      top: 15%;
+      left: 7.5%;
+  }
+
+  /*Hamburger menu */ 
+  .navlinks {
+      position: absolute;
+      right: 0px;
+      height: 84vh;
+      top: 85px;
+      background-image: url(img/menu.svg);
+      opacity: 0.95;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 30%;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+  }
+  .navlinks li {
+      opacity: 1;
+  }
+
+  .burger {
+      display: block;
+      cursor: pointer;
+  }
+
+  nav {
+      justify-content: flex-end;
+  }
+}
+
+.nav-active {
+    transform: translateX(0%);
 }
