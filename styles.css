@@ -37,12 +37,20 @@ body {
 
 .name h1, h2 {
   background-color: white;
-
 }
 
 .name h1 {
   font-weight: 600;
   font-family: 'Codystar', Garamond;
+}
+
+.name a {
+  text-decoration: none;
+  color: black;
+}
+
+.name a:active {
+  color: black;
 }
 
 .name h2 {
@@ -227,7 +235,7 @@ footer p {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 30%;
+      width: 50%;
       transform: translateX(100%);
       transition: transform 0.5s ease-in;
   }
